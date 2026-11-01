@@ -1,0 +1,980 @@
+body {
+  font-family: "Bmorvarid", sans-serif;
+}
+
+.app-shell {
+  display: flex;
+  min-height: 100svh;
+  flex-direction: column;
+  background:
+    radial-gradient(ellipse at 50% 0, rgb(153 255 112 / 5%), transparent 42%),
+    var(--bg);
+}
+
+.back-exit-message {
+  position: fixed;
+  z-index: 20;
+  right: 50%;
+  bottom: 20px;
+  max-width: calc(100vw - 32px);
+  padding: 10px 16px;
+  transform: translateX(50%);
+  border: 1px solid rgb(153 255 112 / 25%);
+  border-radius: 10px;
+  background: #101914;
+  color: #d7f0d4;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 28%);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.site-header,
+.site-footer {
+  box-sizing: border-box;
+  width: 100%;
+  padding-inline: clamp(16px, 4vw, 36px);
+}
+
+.site-header {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid rgb(153 255 112 / 14%);
+  background: rgb(9 15 15 / 82%);
+}
+
+.site-header__brand {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 10px;
+  color: #e7f2e7;
+  text-align: right;
+  text-decoration: none;
+}
+
+.site-header__brand>span:last-child {
+  display: grid;
+  gap: 1px;
+}
+
+.site-header__brand strong {
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+.site-header__brand small {
+  color: #87988b;
+  font-size: 0.68rem;
+}
+
+.site-header__logo {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid rgb(153 255 112 / 35%);
+  border-radius: 12px;
+  background: rgb(153 255 112 / 9%);
+  color: #c9ffb0;
+  font-family: var(--mono);
+  font-size: 1.45rem;
+}
+
+.site-header__nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+}
+
+.site-header__nav a {
+  padding: 8px 11px;
+  border-radius: 7px;
+  color: #a7b5aa;
+  font-size: 0.82rem;
+  text-decoration: none;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
+
+.site-header__nav a:hover {
+  background: rgb(153 255 112 / 9%);
+  color: #d7f0d4;
+}
+
+.site-header__nav a:focus-visible,
+.site-header__brand:focus-visible,
+.site-footer a:focus-visible {
+  outline: 2px solid #c9ffb0;
+  outline-offset: 3px;
+}
+
+.site-main {
+  flex: 1;
+}
+
+.site-section-anchor {
+  width: 100%;
+  scroll-margin-top: 16px;
+}
+
+.site-footer {
+  margin-top: 32px;
+  padding-block: 24px 14px;
+  border-top: 1px solid rgb(153 255 112 / 14%);
+  background: rgb(9 15 15 / 70%);
+  color: #aab8ad;
+  text-align: center;
+}
+
+.site-footer__content,
+.site-footer__bottom {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+}
+
+.site-footer__brand strong {
+  color: #dcebdd;
+  font-size: 0.95rem;
+}
+
+.site-footer__brand p {
+  margin: 4px 0 0;
+  color: #89988d;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.site-footer__contacts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.72rem;
+}
+
+.site-footer__contacts > span {
+  flex-basis: 100%;
+}
+
+.site-footer__contacts>span {
+  color: #89988d;
+}
+
+.site-footer__contacts a {
+  color: #a9c8ac;
+  text-decoration: none;
+}
+
+.site-footer__contacts a:hover,
+.site-footer__contacts button:hover {
+  color: #d9f3dc;
+}
+
+.site-footer__contact-icon {
+  display: inline-grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1px solid rgb(153 255 112 / 16%);
+  border-radius: 9px;
+  background: rgb(153 255 112 / 5%);
+  color: #a9c8ac;
+  transition:
+    border-color 150ms ease,
+    background-color 150ms ease,
+    color 150ms ease,
+    transform 150ms ease;
+}
+
+.site-footer__contact-icon:hover {
+  transform: translateY(-2px);
+  border-color: rgb(153 255 112 / 35%);
+  background: rgb(153 255 112 / 10%);
+  text-decoration: none;
+}
+
+.site-footer__icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.site-footer__copy-email {
+  padding: 0;
+  cursor: pointer;
+}
+
+.site-footer__copy-status {
+  color: #c9ffb0;
+  font-size: 0.7rem;
+}
+
+.site-footer__bottom {
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid rgb(153 255 112 / 10%);
+  color: #738178;
+  font-size: 0.67rem;
+  font-weight: 400;
+}
+
+.digital-clock {
+  width: fit-content;
+  padding: 8px;
+  border: 1px solid #52616b;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #39434a, #171d21 65%);
+  box-shadow:
+    0 8px 18px rgb(0 0 0 / 35%),
+    inset 0 1px 1px rgb(255 255 255 / 18%),
+    inset 0 -2px 4px rgb(0 0 0 / 55%);
+}
+
+.digital-clock__display {
+  min-width: 220px;
+  padding: 10px 14px 8px;
+  border: 1px solid #090d0e;
+  border-radius: 7px;
+  background: #090f0f;
+  box-shadow: inset 0 0 12px rgb(0 0 0 / 90%);
+}
+
+.digital-clock__time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  direction: ltr;
+  gap: 4px;
+  color: #c9ffb0;
+  font-family: var(--mono);
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-shadow: 0 0 7px rgb(153 255 112 / 75%);
+}
+
+.digital-clock__separator {
+  color: #8fc774;
+  animation: digital-clock-blink 1s steps(2, start) infinite;
+}
+
+.digital-clock__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  color: #829582;
+  font-family: var(--mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+}
+
+.digital-clock__period {
+  color: #c9ffb0;
+  font-family: "Bmorvarid", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  text-shadow: 0 0 5px rgb(153 255 112 / 60%);
+}
+
+.calendar-group {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.date-converter {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 24px;
+  padding: clamp(18px, 3vw, 34px);
+  border: 1px solid #30323e;
+  border-radius: 30px;
+  background: #1b1d27;
+  color: #eef0fa;
+  text-align: right;
+}
+
+.date-converter__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 24px;
+  color: #eef0fa;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.date-converter__title::after {
+  width: 6px;
+  height: 26px;
+  border-radius: 99px;
+  background: #00c99b;
+  content: "";
+}
+
+.date-converter__form {
+  display: grid;
+  gap: 16px;
+}
+
+.date-converter__calendars,
+.date-converter__date-fields {
+  display: grid;
+  gap: 14px;
+}
+
+.date-converter__calendars {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.date-converter__date-fields {
+  grid-template-columns: 2fr 1fr 1fr;
+}
+
+.date-converter__field {
+  min-width: 0;
+}
+
+.date-converter__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.date-converter__field select,
+.date-converter__field input {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 74px;
+  padding: 12px 18px;
+  border: 2px solid #464958;
+  border-radius: 20px;
+  background: #2b2e3c;
+  color: #eef0fa;
+  font: inherit;
+}
+
+.date-converter__field select {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.date-converter__field input {
+  text-align: center;
+}
+
+.date-converter__field input::placeholder {
+  color: #9294a0;
+  opacity: 1;
+}
+
+.date-converter__field select:focus-visible,
+.date-converter__field input:focus-visible {
+  border-color: #00c99b;
+  outline: 2px solid rgb(0 201 155 / 25%);
+  outline-offset: 2px;
+}
+
+.date-converter__submit {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 82px;
+  border: 0;
+  border-radius: 20px;
+  background: linear-gradient(110deg, #00d3a2, #00a981);
+  box-shadow: 0 8px 20px rgb(0 201 155 / 22%);
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  transition:
+    filter 150ms ease,
+    transform 150ms ease;
+}
+
+.date-converter__submit:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.date-converter__submit:focus-visible {
+  outline: 2px solid #00c99b;
+  outline-offset: 3px;
+}
+
+.date-converter__output {
+  display: flex;
+  min-height: 78px;
+  align-items: center;
+  margin-top: 18px;
+  padding: 0 18px;
+  border: 1px solid rgb(0 201 155 / 35%);
+  border-radius: 20px;
+  background: rgb(0 201 155 / 10%);
+}
+
+.date-converter__error {
+  margin: 0;
+  color: #ff9a9a;
+}
+
+.date-converter__result {
+  margin: 0;
+  color: #d7fff4;
+  font-weight: 700;
+}
+
+.market-dashboard {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 24px;
+  padding: clamp(16px, 3vw, 28px);
+  border: 1px solid rgb(153 255 112 / 22%);
+  border-radius: 16px;
+  background:
+    radial-gradient(ellipse at top right, rgb(153 255 112 / 8%), transparent 48%),
+    linear-gradient(145deg, #121b19, #090f0f 70%);
+  color: #edf4ee;
+  text-align: right;
+}
+
+.market-dashboard__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.market-dashboard__eyebrow {
+  margin: 0 0 5px;
+  color: #9ac890;
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+}
+
+.market-dashboard__header h2 {
+  margin: 0;
+  color: #f0f6f0;
+  font-size: clamp(1.15rem, 3vw, 1.65rem);
+  line-height: 1.3;
+}
+
+.market-dashboard__description {
+  margin: 6px 0 0;
+  color: #84948a;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.market-dashboard__refresh {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 7px;
+  color: #98a79e;
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
+.market-dashboard__live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #54d68b;
+  box-shadow: 0 0 10px rgb(84 214 139 / 65%);
+}
+
+.market-dashboard__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 12px;
+}
+
+.market-card {
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid rgb(206 230 211 / 9%);
+  border-radius: 12px;
+  background: linear-gradient(150deg, rgb(31 43 39 / 80%), rgb(14 22 20 / 95%));
+  box-shadow: 0 10px 24px rgb(0 0 0 / 16%);
+}
+
+.market-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.market-card__symbol {
+  margin: 0;
+  color: #94a49a;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.market-card__title {
+  margin: 5px 0 0;
+  color: #d3ddd6;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.market-card__badge {
+  display: grid;
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 9%);
+  border-radius: 10px;
+  background: rgb(255 255 255 / 4%);
+  color: #dce8df;
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.market-card__badge--bitcoin {
+  background: rgb(247 147 26 / 12%);
+  color: #f6a944;
+}
+
+.market-card__badge--gold {
+  background: rgb(245 194 83 / 12%);
+  color: #f1c85e;
+}
+
+.market-card__badge--usd-afn {
+  color: #70d7a1;
+}
+
+.market-card__badge--eur-afn {
+  color: #8db4ff;
+}
+
+.market-card__price {
+  overflow-wrap: anywhere;
+  margin: 22px 0 10px;
+  color: #f2f7f3;
+  font-family: var(--mono);
+  font-size: clamp(1.45rem, 4vw, 1.9rem);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+}
+
+.market-card__change {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 1.3rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.market-card__change--up {
+  color: #51d58b;
+}
+
+.market-card__change--down {
+  color: #ff737b;
+}
+
+.market-card__change--neutral {
+  color: #a4b0a8;
+}
+
+.market-card__period {
+  color: #92a098;
+  font-size: 0.68rem;
+  font-weight: 500;
+}
+
+.market-card__updated,
+.market-card__updated {
+  margin: 13px 0 0;
+  color: #9ba9a0;
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
+.market-card__status {
+  min-height: 5.4rem;
+  margin: 22px 0 10px;
+  color: #9ba9a0;
+  font-size: 0.8rem;
+  font-weight: 400;
+  overflow-wrap: anywhere;
+}
+
+.market-card__status--error {
+  color: #ff9298;
+}
+
+.market-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid rgb(206 230 211 / 8%);
+  color: #91a096;
+  font-size: 0.65rem;
+  font-weight: 400;
+}
+
+.market-card__stale {
+  color: #ffb878;
+  text-align: right;
+}
+
+.market-dashboard__note {
+  margin: 14px 0 0;
+  color: #819087;
+  font-size: 0.7rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.weather-dashboard {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 24px;
+  padding: clamp(16px, 3vw, 28px);
+  border: 1px solid rgb(135 190 255 / 22%);
+  border-radius: 16px;
+  background:
+    radial-gradient(ellipse at top right, rgb(105 173 255 / 9%), transparent 48%),
+    linear-gradient(145deg, #121a22, #090f15 70%);
+  color: #edf4ee;
+  text-align: right;
+}
+
+.weather-dashboard__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.weather-dashboard__eyebrow {
+  margin: 0 0 5px;
+  color: #91b9e8;
+  font-size: 0.75rem;
+}
+
+.weather-dashboard__header h2 {
+  margin: 0;
+  color: #f0f6f0;
+  font-size: clamp(1.15rem, 3vw, 1.65rem);
+  line-height: 1.3;
+}
+
+.weather-dashboard__description,
+.weather-dashboard__updated {
+  margin: 6px 0 0;
+  color: #91a0ad;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.weather-dashboard__updated {
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+.weather-dashboard__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr));
+  gap: 12px;
+}
+
+.weather-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px 12px;
+  border: 1px solid rgb(206 230 245 / 10%);
+  border-radius: 12px;
+  background: linear-gradient(150deg, rgb(30 45 58 / 78%), rgb(14 22 30 / 95%));
+  text-align: center;
+}
+
+.weather-card__date {
+  margin: 0;
+  color: #d3e2ef;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.weather-card__icon {
+  display: block;
+  margin-top: 14px;
+  font-family: var(--sans);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.weather-card__condition {
+  min-height: 1.5rem;
+  margin: 12px 0 0;
+  color: #aab9c5;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.weather-card__temperatures {
+  display: grid;
+  width: 100%;
+  gap: 5px;
+  margin-top: 14px;
+}
+
+.weather-card__temperature {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0;
+  color: #f4f7f9;
+  font-size: 0.8rem;
+  direction: rtl;
+}
+
+.weather-card__temperature > span:last-child {
+  font-family: var(--mono);
+  font-size: 1.15rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  direction: ltr;
+}
+
+.weather-card__temperature-label {
+  color: #8da3b4;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.weather-card__temperature--low > span:last-child {
+  color: #8da3b4;
+}
+
+.weather-dashboard__message {
+  margin: 18px 0;
+  color: #b7c8d5;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.weather-dashboard__message--error {
+  color: #ff9298;
+}
+
+.weather-dashboard__location-warning {
+  margin: 0 0 12px;
+  color: #ffc878;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.weather-dashboard__error {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+}
+
+.weather-dashboard__error .weather-dashboard__message {
+  flex: 1 1 220px;
+  margin: 18px 0;
+}
+
+.weather-dashboard__retry {
+  min-height: 2.25rem;
+  padding: 6px 12px;
+  border: 1px solid rgb(135 190 255 / 35%);
+  border-radius: 7px;
+  background: rgb(105 173 255 / 10%);
+  color: #c9e2ff;
+  font: inherit;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.weather-dashboard__retry:hover:not(:disabled) {
+  background: rgb(105 173 255 / 20%);
+}
+
+.weather-dashboard__retry:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.calendar-group__title {
+  margin: 0 0 8px;
+  color: #c9ffb0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.calendar-group__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+
+.calendar-card {
+  box-sizing: border-box;
+  min-width: 0;
+  margin: 0;
+  padding: 8px 10px 12px;
+  border: 1px solid rgb(153 255 112 / 30%);
+  border-radius: 8px;
+  background: rgb(9 15 15 / 70%);
+  color: #c9ffb0;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.calendar-card__title {
+  padding: 0 8px;
+  color: #c9ffb0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.calendar-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  min-height: 2rem;
+  margin-bottom: 4px;
+}
+
+.calendar-card__month-name,
+.calendar-card__date {
+  color: #c9ffb0;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.calendar-card__date {
+  display: flex;
+  direction: rtl;
+  gap: 0.2em;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.calendar-card__grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 2px;
+}
+
+.calendar-card__weekday {
+  padding: 4px 0 2px;
+  color: #829582;
+  font-size: 0.6875rem;
+}
+
+.calendar-card__day,
+.calendar-card__empty {
+  display: grid;
+  min-height: 1.75rem;
+  place-items: center;
+  border-radius: 6px;
+}
+
+.calendar-card__day {
+  color: #c9ffb0;
+  font-variant-numeric: tabular-nums;
+}
+
+.calendar-card__day--today {
+  background: #c9ffb0;
+  color: #090f0f;
+  font-weight: 700;
+}
+
+@media (min-width: 640px) {
+  .calendar-group__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .calendar-group__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    padding-block: 14px;
+  }
+
+  .site-header__nav {
+    width: 100%;
+    justify-content: space-between;
+    gap: 2px;
+  }
+
+  .site-header__nav a {
+    padding-inline: 7px;
+    font-size: 0.75rem;
+  }
+
+  .site-footer__bottom {
+    gap: 8px;
+  }
+
+  .market-dashboard__header,
+  .weather-dashboard__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@keyframes digital-clock-blink {
+  to {
+    opacity: 0.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .digital-clock__separator {
+    animation: none;
+  }
+}
