@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      adhan:
+        specifier: ^4.4.6
+        version: 4.4.6
       react:
         specifier: ^19.3.1
         version: 19.3.1
@@ -402,6 +405,9 @@ packages:
         optional: true
       oxc-transform-react:
         optional: true
+
+  adhan@4.4.6:
+    resolution: {integrity: sha512-cpLLcr6qxx+mLc6jgSXJwAAHxDFrhXhVLuzRbZPrpQKIEpJw+0LcfG6u9WEjq66kcTX/2sCkI3VztgRoUXBnFg==}
 
   csstype@3.2.3:
     resolution: {integrity: sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==}
@@ -909,6 +915,8 @@ snapshots:
     dependencies:
       '@rolldown/pluginutils': 1.0.1
       vite: 8.3.5(@types/node@24.19.2)(jiti@2.7.0)
+
+  adhan@4.4.6: {}
 
   csstype@3.2.3: {}
 

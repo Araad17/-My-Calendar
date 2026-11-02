@@ -837,6 +837,156 @@ body {
   opacity: 0.6;
 }
 
+.azan-dashboard {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 24px;
+  padding: clamp(16px, 3vw, 28px);
+  border: 1px solid rgb(153 255 112 / 22%);
+  border-radius: 16px;
+  background:
+    radial-gradient(ellipse at top right, rgb(153 255 112 / 8%), transparent 48%),
+    linear-gradient(145deg, #121b16, #090f0d 70%);
+  color: #edf4ee;
+  text-align: right;
+}
+
+.azan-dashboard__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.azan-dashboard__eyebrow {
+  margin: 0 0 5px;
+  color: #a4d48e;
+  font-size: 0.75rem;
+}
+
+.azan-dashboard__header h2 {
+  margin: 0;
+  color: #f0f6f0;
+  font-size: clamp(1.15rem, 3vw, 1.65rem);
+  line-height: 1.3;
+}
+
+.azan-dashboard__description,
+.azan-dashboard__note {
+  margin: 6px 0 0;
+  color: #91a096;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.azan-dashboard__city {
+  display: grid;
+  flex: 0 0 auto;
+  gap: 5px;
+  color: #a9b9ab;
+  font-size: 0.72rem;
+}
+
+.azan-dashboard__city select {
+  min-height: 2.4rem;
+  padding: 5px 10px;
+  border: 1px solid rgb(153 255 112 / 25%);
+  border-radius: 7px;
+  background: #101914;
+  color: #e5f1e5;
+  font: inherit;
+}
+
+.azan-dashboard__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr));
+  gap: 12px;
+}
+
+.azan-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 12px;
+  border: 1px solid rgb(206 230 211 / 10%);
+  border-radius: 12px;
+  background: linear-gradient(150deg, rgb(30 45 35 / 78%), rgb(14 22 17 / 95%));
+  text-align: center;
+}
+
+.azan-card__icon {
+  color: #c9ffb0;
+  font-family: var(--sans);
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.azan-card h3 {
+  margin: 10px 0 4px;
+  color: #d3e2d4;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.azan-card__time {
+  color: #f4f7f4;
+  font-family: var(--mono);
+  font-size: 1.2rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.azan-dashboard__message {
+  margin: 18px 0;
+  color: #b7c8bb;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.azan-dashboard__message--error {
+  color: #ff9298;
+}
+
+.azan-dashboard__error {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+}
+
+.azan-dashboard__error .azan-dashboard__message {
+  flex: 1 1 220px;
+  margin: 18px 0;
+}
+
+.azan-dashboard__retry {
+  min-height: 2.25rem;
+  padding: 6px 12px;
+  border: 1px solid rgb(153 255 112 / 35%);
+  border-radius: 7px;
+  background: rgb(153 255 112 / 10%);
+  color: #d7f0d4;
+  font: inherit;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.azan-dashboard__retry:hover:not(:disabled) {
+  background: rgb(153 255 112 / 20%);
+}
+
+.azan-dashboard__retry:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.azan-dashboard__note {
+  margin-top: 14px;
+  line-height: 1.6;
+}
+
 .calendar-group__title {
   margin: 0 0 8px;
   color: #c9ffb0;
@@ -961,7 +1111,8 @@ body {
   }
 
   .market-dashboard__header,
-  .weather-dashboard__header {
+  .weather-dashboard__header,
+  .azan-dashboard__header {
     align-items: flex-start;
     flex-direction: column;
   }

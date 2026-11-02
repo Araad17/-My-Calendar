@@ -5,6 +5,7 @@ import LiveDate from "./component/LiveDate";
 import DateConverter from "./component/DateConverter";
 import Currency from "./component/Currency";
 import Weather from "./component/Weather";
+import Azan from "./component/Azan";
 
 type ContactIconName =
 	| "website"
@@ -123,6 +124,7 @@ function App() {
 					<a href="#date-converter">تبدیل تاریخ</a>
 					<a href="#markets">بازار</a>
 					<a href="#weather">آب‌وهوا</a>
+					<a href="#azan">اوقات نماز</a>
 				</nav>
 			</header>
 
@@ -146,6 +148,7 @@ function App() {
 						<div id="weather" className="site-section-anchor">
 							<Weather />
 						</div>
+						<Azan />
 					</div>
 				</div>
 			</main>
