@@ -6,6 +6,7 @@ import DateConverter from "./component/DateConverter";
 import Currency from "./component/Currency";
 import Weather from "./component/Weather";
 import Azan from "./component/Azan";
+import Visitor from "./component/Visitor";
 
 type ContactIconName =
 	| "website"
@@ -126,6 +127,7 @@ function App() {
 					<a href="#weather">آب‌وهوا</a>
 					<a href="#azan">اوقات نماز</a>
 				</nav>
+				<Visitor />
 			</header>
 
 			<main className="site-main" id="home">

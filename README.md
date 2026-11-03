@@ -1,5 +1,12 @@
 # React + TypeScript + Vite
 
+## Visitor counter
+
+The site-wide visitor counter uses the Vercel API route at `/api/visitor` and
+Upstash Redis. Create an Upstash Redis database and set `UPSTASH_REDIS_REST_URL`
+and `UPSTASH_REDIS_REST_TOKEN` in the Vercel project's environment variables.
+The count is incremented once when the app loads.
+
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
 Currently, two official plugins are available:
